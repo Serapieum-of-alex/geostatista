@@ -1,8 +1,8 @@
 [![Python Versions](https://img.shields.io/pypi/pyversions/geostatista.png)](https://img.shields.io/pypi/pyversions/geostatista)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MAfarrag/earth2observe.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MAfarrag/earth2observe/context:python)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/MAfarrag/earth2observe.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MAfarrag/earth2observe/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MAfarrag/geostatista.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MAfarrag/geostatista/context:python)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/MAfarrag/geostatista.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MAfarrag/geostatista/alerts/)
 
 
 
