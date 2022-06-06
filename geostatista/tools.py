@@ -5,7 +5,7 @@ Created on Thu May 17 04:26:42 2018
 """
 
 import numpy as np
-from statista.tools import Tools as tl
+# from statista.tools import Tools as tl
 
 class Tools:
     """Tools.
