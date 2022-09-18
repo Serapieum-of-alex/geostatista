@@ -9,17 +9,16 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-# General information about the project.
-project = u"geostatista"
-author = "Mostafa Farrag"
-
-# copyright = u"2013-2019, "
-
-
 import os
 import sys
 
 # import sphinx_rtd_theme
+
+# General information about the project.
+project = "geostatista"
+author = "Mostafa Farrag"
+
+# copyright = u"2013-2019, "
 
 html_theme = "sphinxdoc"
 # html_theme = "agogo"
@@ -207,7 +206,13 @@ htmlhelp_basename = "pyramidsdoc"
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ("index", "geostatista.tex", u"geostatista Documentation", u"Mostafa Farrag", "report")
+    (
+        "index",
+        "geostatista.tex",
+        "geostatista Documentation",
+        "Mostafa Farrag",
+        "report",
+    )
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -250,8 +255,8 @@ texinfo_documents = [
     (
         "index",
         "geostatista",
-        u"geostatista Documentation",
-        u"Mostafa Farrag",
+        "geostatista Documentation",
+        "Mostafa Farrag",
         "geostatista",
         "One line description of project.",
         "Miscellaneous",

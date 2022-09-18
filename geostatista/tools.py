@@ -1,17 +1,19 @@
-"""
-Created on Thu May 17 04:26:42 2018
+"""Created on Thu May 17 04:26:42 2018.
 
 @author: Mostafa
 """
 
 import numpy as np
+
 # from statista.tools import Tools as tl
+
 
 class Tools:
     """Tools.
 
     Tools different statistical and interpolation tools
     """
+
     def __init__(self):
         pass
 
@@ -118,7 +120,6 @@ class Tools:
         sp_dist = sp_dist.astype(np.float32)
 
         return sp_dist
-
 
     @staticmethod
     def ISDW(raster, coordinates, data, No_data_cells=False):

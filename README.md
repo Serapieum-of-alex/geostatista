@@ -26,12 +26,12 @@ geostatista
 
 Main Features
 -------------
-  - 
+  -
 
 
 Future work
 -------------
-  - 
+  -
 
 
 
