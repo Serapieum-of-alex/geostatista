@@ -10,7 +10,7 @@ python = ">3.9,<3.12"
 pandas = "^1.4.4"
 matplotlib = "^3.5.3"
 loguru = "^0.6.0"
-GDAL = "3.4.3"
+GDAL = "3.5.2"
 statista = "^0.1.4"
 
 [tool.poetry.dev-dependencies]
