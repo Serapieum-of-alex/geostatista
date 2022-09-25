@@ -22,14 +22,14 @@ classifiers=[
 
 
 [tool.poetry.dependencies]
-python = ">3.9,<3.12"
+python = ">=3.9,<3.12"
 pandas = "^1.4.4"
 matplotlib = "^3.5.3"
 loguru = "^0.6.0"
 GDAL = "3.4.3"
-gdal = {url = "https://download.lfd.uci.edu/pythonlibs/archived/GDAL-3.4.3-cp39-cp39-win_amd64.whl" }
+#gdal = {url = "https://download.lfd.uci.edu/pythonlibs/archived/GDAL-3.4.3-cp39-cp39-win_amd64.whl" }
 Fiona = "1.8.21"
-fiona = {url = "https://download.lfd.uci.edu/pythonlibs/archived/Fiona-1.8.21-cp39-cp39-win_amd64.whl"}
+#fiona = {url = "https://download.lfd.uci.edu/pythonlibs/archived/Fiona-1.8.21-cp39-cp39-win_amd64.whl"}
 statista = "^0.1.6"
 pyramids-gis = "^0.2.5"
 
