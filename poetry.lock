@@ -21,7 +21,7 @@ python-versions = ">=3.5"
 dev = ["cloudpickle", "coverage[toml] (>=5.0.2)", "furo", "hypothesis", "mypy (>=0.900,!=0.940)", "pre-commit", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "sphinx", "sphinx-notfound-page", "zope.interface"]
 docs = ["furo", "sphinx", "sphinx-notfound-page", "zope.interface"]
 tests = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "zope.interface"]
-tests_no_zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins"]
+tests-no-zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins"]
 
 [[package]]
 name = "bandit"
@@ -250,6 +250,7 @@ test = ["boto3 (>=1.2.4)", "mock", "pytest (>=3)", "pytest-cov"]
 [package.source]
 type = "url"
 url = "https://download.lfd.uci.edu/pythonlibs/archived/Fiona-1.8.21-cp39-cp39-win_amd64.whl"
+
 [[package]]
 name = "flake8"
 version = "5.0.4"
@@ -304,16 +305,19 @@ pydocstyle = ">=2.1"
 
 [[package]]
 name = "flake8-rst-docstrings"
-version = "0.2.7"
-description = "Python docstring reStructuredText (RST) validator"
+version = "0.3.0"
+description = "Python docstring reStructuredText (RST) validator for flake8"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-flake8 = ">=3.0.0"
+flake8 = ">=3"
 pygments = "*"
 restructuredtext-lint = "*"
+
+[package.extras]
+develop = ["build", "twine"]
 
 [[package]]
 name = "fonttools"
@@ -351,6 +355,7 @@ numpy = ["numpy (>1.19.0)"]
 [package.source]
 type = "url"
 url = "https://download.lfd.uci.edu/pythonlibs/archived/GDAL-3.4.3-cp39-cp39-win_amd64.whl"
+
 [[package]]
 name = "geographiclib"
 version = "1.52"
@@ -569,8 +574,8 @@ python-versions = ">=3.8"
 
 [package.dependencies]
 numpy = [
-    {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
     {version = ">=1.20.3", markers = "python_version < \"3.10\""},
+    {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
 ]
 python-dateutil = ">=2.8.1"
 pytz = ">=2020.1"
@@ -1107,8 +1112,8 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = ">3.9,<3.12"
-content-hash = "909f8a4a93261d8312dd619cea8f57f1dbc8b5e89da093d7c8aa572bc4d31624"
+python-versions = ">=3.9,<3.12"
+content-hash = "f09462202e65c9ced23a04777079659d074b8a8db2ddb0fe45665878ba586b8d"
 
 [metadata.files]
 affine = [
@@ -1360,8 +1365,8 @@ flake8-docstrings = [
     {file = "flake8_docstrings-1.6.0-py2.py3-none-any.whl", hash = "sha256:99cac583d6c7e32dd28bbfbef120a7c0d1b6dde4adb5a9fd441c4227a6534bde"},
 ]
 flake8-rst-docstrings = [
-    {file = "flake8-rst-docstrings-0.2.7.tar.gz", hash = "sha256:2740067ab9237559dd45a3434d8c987792c7b259ca563621a3b95efe201f5382"},
-    {file = "flake8_rst_docstrings-0.2.7-py3-none-any.whl", hash = "sha256:5d56075dce360bcc9c6775bfe7cb431aa395de600ca7e8d40580a28d50b2a803"},
+    {file = "flake8-rst-docstrings-0.3.0.tar.gz", hash = "sha256:d1ce22b4bd37b73cd86b8d980e946ef198cfcc18ed82fedb674ceaa2f8d1afa4"},
+    {file = "flake8_rst_docstrings-0.3.0-py3-none-any.whl", hash = "sha256:f8c3c6892ff402292651c31983a38da082480ad3ba253743de52989bdc84ca1c"},
 ]
 fonttools = [
     {file = "fonttools-4.37.3-py3-none-any.whl", hash = "sha256:a5bc5f5d48faa4085310b8ebd4c5d33bf27c6636c5f10a7de792510af2745a81"},
@@ -1536,6 +1541,11 @@ netCDF4 = [
     {file = "netCDF4-1.6.1-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:e77b56e7d354ac76d6cefd0f3026d588c8c341a596cfbedf7f37a0fea130f327"},
     {file = "netCDF4-1.6.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3fd8b20d075ff031476837f16f4e8c1a05098adce73ad9a7f9061b3489e6a7a0"},
     {file = "netCDF4-1.6.1-cp310-cp310-win_amd64.whl", hash = "sha256:34ff9854927da8da10144f067770694d691b12bf711e58b960a37510a232d5e1"},
+    {file = "netCDF4-1.6.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:f401b5a64cde0c6fbe6f83a3709f23ffbbb3c72957a260ddc5cd1634d7de9fa8"},
+    {file = "netCDF4-1.6.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:cdcb7018f83d3cc64983b6f7f8517c5f6cec18500f3edf53e06f72bf8e2845a5"},
+    {file = "netCDF4-1.6.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4490c23ad10f82987cafbf9a3b2436d8ed74075d0cdf172eb7c5bb7507d33338"},
+    {file = "netCDF4-1.6.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:da4925eb4d1e03acf015f3d0e84184055e188d1b6ca0db84cae907b83ac7732a"},
+    {file = "netCDF4-1.6.1-cp311-cp311-win_amd64.whl", hash = "sha256:aadba8a9a9c394ef7a0f75b7ac25cdc60c79029fb49d49e62a90d215d2d53fd6"},
     {file = "netCDF4-1.6.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:264303b82dc6385b19cd5b1ad03a5740a33459e48d8b36b8b12dbf6e7c9054cd"},
     {file = "netCDF4-1.6.1-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7b92aec6fdf601e6d5c3cf7ea64f02962f1c0d22fa0a39d57d25da7b10676f83"},
     {file = "netCDF4-1.6.1-cp36-cp36m-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:832d151cd706a8c438331a7addee15bd354b28483cc37830807c4f793974d13b"},
