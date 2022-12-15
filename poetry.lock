@@ -21,7 +21,7 @@ python-versions = ">=3.5"
 dev = ["cloudpickle", "coverage[toml] (>=5.0.2)", "furo", "hypothesis", "mypy (>=0.900,!=0.940)", "pre-commit", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "sphinx", "sphinx-notfound-page", "zope.interface"]
 docs = ["furo", "sphinx", "sphinx-notfound-page", "zope.interface"]
 tests = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "zope.interface"]
-tests_no_zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins"]
+tests-no-zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins"]
 
 [[package]]
 name = "bandit"
@@ -90,6 +90,17 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 numpy = ">1.13.3"
+
+[[package]]
+name = "charset-normalizer"
+version = "2.1.1"
+description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.extras]
+unicode-backport = ["unicodedata2"]
 
 [[package]]
 name = "classify-imports"
@@ -250,6 +261,7 @@ test = ["boto3 (>=1.2.4)", "mock", "pytest (>=3)", "pytest-cov"]
 [package.source]
 type = "url"
 url = "https://download.lfd.uci.edu/pythonlibs/archived/Fiona-1.8.21-cp39-cp39-win_amd64.whl"
+
 [[package]]
 name = "flake8"
 version = "5.0.4"
@@ -351,6 +363,7 @@ numpy = ["numpy (>1.19.0)"]
 [package.source]
 type = "url"
 url = "https://download.lfd.uci.edu/pythonlibs/archived/GDAL-3.4.3-cp39-cp39-win_amd64.whl"
+
 [[package]]
 name = "geographiclib"
 version = "1.52"
@@ -361,7 +374,7 @@ python-versions = "*"
 
 [[package]]
 name = "geopandas"
-version = "0.11.1"
+version = "0.12.2"
 description = "Geographic pandas extensions"
 category = "main"
 optional = false
@@ -372,7 +385,7 @@ fiona = ">=1.8"
 packaging = "*"
 pandas = ">=1.0.0"
 pyproj = ">=2.6.1.post1"
-shapely = ">=1.7,<2"
+shapely = ">=1.7"
 
 [[package]]
 name = "geopy"
@@ -426,6 +439,14 @@ python-versions = ">=3.7"
 
 [package.extras]
 license = ["ukkonen"]
+
+[[package]]
+name = "idna"
+version = "3.4"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "main"
+optional = false
+python-versions = ">=3.5"
 
 [[package]]
 name = "iniconfig"
@@ -569,8 +590,8 @@ python-versions = ">=3.8"
 
 [package.dependencies]
 numpy = [
-    {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
     {version = ">=1.20.3", markers = "python_version < \"3.10\""},
+    {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
 ]
 python-dateutil = ">=2.8.1"
 pytz = ">=2020.1"
@@ -742,7 +763,7 @@ certifi = "*"
 
 [[package]]
 name = "pyramids-gis"
-version = "0.2.5"
+version = "0.2.7"
 description = "GIS utility package"
 category = "main"
 optional = false
@@ -750,16 +771,15 @@ python-versions = ">=3.9,<3.12"
 
 [package.dependencies]
 affine = ">=2.3.1,<3.0.0"
-Fiona = "1.8.21"
 GDAL = "3.4.3"
-geopandas = ">=0.11.1,<0.12.0"
+geopandas = ">=0.12.2,<0.13.0"
 geopy = ">=2.2.0,<3.0.0"
 loguru = ">=0.6.0,<0.7.0"
-matplotlib = ">=3.5.3,<4.0.0"
 netCDF4 = ">=1.6.1,<2.0.0"
 pandas = ">=1.4.4,<2.0.0"
-pyproj = ">=3.4.0,<4.0.0"
+pyproj = "3.4.0"
 rasterio = ">=1.3.0,<2.0.0"
+requests = ">=2.28.1,<3.0.0"
 Rtree = ">=1.0.0,<2.0.0"
 Shapely = ">=1.8.4,<2.0.0"
 
@@ -862,6 +882,24 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 classify-imports = ">=4.1"
+
+[[package]]
+name = "requests"
+version = "2.28.1"
+description = "Python HTTP for Humans."
+category = "main"
+optional = false
+python-versions = ">=3.7, <4"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+charset-normalizer = ">=2,<3"
+idna = ">=2.5,<4"
+urllib3 = ">=1.21.1,<1.27"
+
+[package.extras]
+socks = ["PySocks (>=1.5.6,!=1.5.7)"]
+use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "restructuredtext-lint"
@@ -1078,6 +1116,19 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "urllib3"
+version = "1.26.13"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+
+[package.extras]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
+secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+
+[[package]]
 name = "virtualenv"
 version = "20.16.5"
 description = "Virtual Python Environment builder"
@@ -1107,8 +1158,8 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = ">3.9,<3.12"
-content-hash = "909f8a4a93261d8312dd619cea8f57f1dbc8b5e89da093d7c8aa572bc4d31624"
+python-versions = ">=3.9,<3.12"
+content-hash = "2f8a789fb2dfb1c32bbb9e80d0f96a20e86bcfee02c2409097c77cddd375db20"
 
 [metadata.files]
 affine = [
@@ -1178,6 +1229,10 @@ cftime = [
     {file = "cftime-1.6.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:892d5dc38f8b998c83a2a01f131e63896d020586de473e1878f9e85acc70ad44"},
     {file = "cftime-1.6.2-cp39-cp39-win_amd64.whl", hash = "sha256:86fe550b94525c327578a90b2e13418ca5ba6c636d5efe3edec310e631757eea"},
     {file = "cftime-1.6.2.tar.gz", hash = "sha256:8614c00fb8a5046de304fdd86dbd224f99408185d7b245ac6628d0276596e6d2"},
+]
+charset-normalizer = [
+    {file = "charset-normalizer-2.1.1.tar.gz", hash = "sha256:5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"},
+    {file = "charset_normalizer-2.1.1-py3-none-any.whl", hash = "sha256:83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"},
 ]
 classify-imports = [
     {file = "classify_imports-4.2.0-py2.py3-none-any.whl", hash = "sha256:dbbc264b70a470ed8c6c95976a11dfb8b7f63df44ed1af87328bbed2663f5161"},
@@ -1373,8 +1428,8 @@ geographiclib = [
     {file = "geographiclib-1.52.tar.gz", hash = "sha256:ac400d672b8954b0306bca890b088bb8ba2a757dc8133cca0b878f34b33b2740"},
 ]
 geopandas = [
-    {file = "geopandas-0.11.1-py3-none-any.whl", hash = "sha256:f3344937f3866e52996c7e505d56dae78be117dc840cd1c23507da0b33c0af71"},
-    {file = "geopandas-0.11.1.tar.gz", hash = "sha256:f0f0c8d0423d30cf81de2056d853145c4362739350a7f8f2d72cc7409ef1eca1"},
+    {file = "geopandas-0.12.2-py3-none-any.whl", hash = "sha256:0a470e4bf6f5367e6fd83ab6b40405e0b805c8174665bbcb7c4077ed90202912"},
+    {file = "geopandas-0.12.2.tar.gz", hash = "sha256:0acdacddefa176525e4da6d9aeeece225da26055c4becdc6e97cf40fa97c27f4"},
 ]
 geopy = [
     {file = "geopy-2.2.0-py3-none-any.whl", hash = "sha256:8f1f949082b964385de61fcc3a667a6a9a6e242beb1ae8972449f164b2ba0e89"},
@@ -1391,6 +1446,10 @@ GitPython = [
 identify = [
     {file = "identify-2.5.5-py2.py3-none-any.whl", hash = "sha256:ef78c0d96098a3b5fe7720be4a97e73f439af7cf088ebf47b620aeaa10fadf97"},
     {file = "identify-2.5.5.tar.gz", hash = "sha256:322a5699daecf7c6fd60e68852f36f2ecbb6a36ff6e6e973e0d2bb6fca203ee6"},
+]
+idna = [
+    {file = "idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
+    {file = "idna-3.4.tar.gz", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"},
 ]
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
@@ -1535,7 +1594,10 @@ netCDF4 = [
     {file = "netCDF4-1.6.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a2aea9a42576e7a9954925c3422b1054bc400b6723c9ae5854ced1e119a087e7"},
     {file = "netCDF4-1.6.1-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:e77b56e7d354ac76d6cefd0f3026d588c8c341a596cfbedf7f37a0fea130f327"},
     {file = "netCDF4-1.6.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3fd8b20d075ff031476837f16f4e8c1a05098adce73ad9a7f9061b3489e6a7a0"},
-    {file = "netCDF4-1.6.1-cp310-cp310-win_amd64.whl", hash = "sha256:34ff9854927da8da10144f067770694d691b12bf711e58b960a37510a232d5e1"},
+    {file = "netCDF4-1.6.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:f401b5a64cde0c6fbe6f83a3709f23ffbbb3c72957a260ddc5cd1634d7de9fa8"},
+    {file = "netCDF4-1.6.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:cdcb7018f83d3cc64983b6f7f8517c5f6cec18500f3edf53e06f72bf8e2845a5"},
+    {file = "netCDF4-1.6.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4490c23ad10f82987cafbf9a3b2436d8ed74075d0cdf172eb7c5bb7507d33338"},
+    {file = "netCDF4-1.6.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:da4925eb4d1e03acf015f3d0e84184055e188d1b6ca0db84cae907b83ac7732a"},
     {file = "netCDF4-1.6.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:264303b82dc6385b19cd5b1ad03a5740a33459e48d8b36b8b12dbf6e7c9054cd"},
     {file = "netCDF4-1.6.1-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7b92aec6fdf601e6d5c3cf7ea64f02962f1c0d22fa0a39d57d25da7b10676f83"},
     {file = "netCDF4-1.6.1-cp36-cp36m-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:832d151cd706a8c438331a7addee15bd354b28483cc37830807c4f793974d13b"},
@@ -1544,19 +1606,16 @@ netCDF4 = [
     {file = "netCDF4-1.6.1-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b8e1fc4a7876eeaeefc74d1a2efd1bc0306b07692846537f865443d5a3f27180"},
     {file = "netCDF4-1.6.1-cp37-cp37m-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:245de44ac3450531ce3f4cf29a60e0bf58037e468d4da1c3821fb56b27a38298"},
     {file = "netCDF4-1.6.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:952a39771f5913d2a498950924cd6ea7857d92d12dfab720e253f5cb2f7695ba"},
-    {file = "netCDF4-1.6.1-cp37-cp37m-win_amd64.whl", hash = "sha256:b6a2e510ac6d0c160d866b1862ceda4d34aa96196d6c86c9c5b0b488c76c89c2"},
     {file = "netCDF4-1.6.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:17f89ae686ccaf8a21b527c07ef871787b157aeca44789fb24b0976a147cf93e"},
     {file = "netCDF4-1.6.1-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:8474e59bf3de581aaf9152901423891d75d1a48864c11f30b3384c42d9210f8e"},
     {file = "netCDF4-1.6.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:bf65e8b6ba9cb320a279f0b5b554a9961f0ec05bdbdf4b5f6b346014a65498d9"},
     {file = "netCDF4-1.6.1-cp38-cp38-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:f47a0f434825a21eaa41fa0512cf486ed27206b5b07c7878af9c7e1eb23ed49f"},
     {file = "netCDF4-1.6.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:af7d7fec6265d9fd06c5d1b246c3b92485baa020f4dbacb4167506bf69d75da5"},
-    {file = "netCDF4-1.6.1-cp38-cp38-win_amd64.whl", hash = "sha256:d9fcca670fab4ef56bed5539271810d5fbbe4df486f1737cdef58ccbedcbd941"},
     {file = "netCDF4-1.6.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:de2bb8c4986469584b65584b64e4231163b89924d4bca2bc313f2cf9a307da26"},
     {file = "netCDF4-1.6.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:577ac6619d078060e0b4312f2f3c44bd7912cb6277813414ef77914a45099612"},
     {file = "netCDF4-1.6.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:61777bb3ddd54b73badb2c803518484d034776c0ea30d7eeef70b4c8def3658f"},
     {file = "netCDF4-1.6.1-cp39-cp39-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:715a1c5dc914683b636ec7490bd5734f585ab8c7ba3c1d0e047b684baeb3f58f"},
     {file = "netCDF4-1.6.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6238a348e6679bb2164e47fb3b2afd49ed1e9d9a0beefe3f6183a5130eacf557"},
-    {file = "netCDF4-1.6.1-cp39-cp39-win_amd64.whl", hash = "sha256:bb05b3613d4c98da1df71de2a1f41a77433ceda4ee9873f5dcd11af4822aa5f7"},
     {file = "netCDF4-1.6.1.tar.gz", hash = "sha256:ba8dc5d65293a99f1afb8c2acf588d903fdfdc1963a62545b677fa2734262a78"},
 ]
 nodeenv = [
@@ -1771,8 +1830,8 @@ pyproj = [
     {file = "pyproj-3.4.0.tar.gz", hash = "sha256:a708445927ace9857f52c3ba67d2915da7b41a8fdcd9b8f99a4c9ed60a75eb33"},
 ]
 pyramids-gis = [
-    {file = "pyramids-gis-0.2.5.tar.gz", hash = "sha256:3f5d039f33b4c0e62850728cd96ffd7ee9431b546c11eaea3d99af3332be739f"},
-    {file = "pyramids_gis-0.2.5-py3-none-any.whl", hash = "sha256:ac4278345c1137f0657f0779162c246d4ac6e5fc66f3cb0d749c5513078d5353"},
+    {file = "pyramids_gis-0.2.7-py3-none-any.whl", hash = "sha256:4ce5b813f2a51ca5d3ba21fdd6867cd3e2c94942dc79eefe6ad7004121b4df27"},
+    {file = "pyramids_gis-0.2.7.tar.gz", hash = "sha256:22cee66835185c388bb928dc01bbad9bae46aaa27a61bf31ff4cf06813c04677"},
 ]
 pytest = [
     {file = "pytest-7.1.3-py3-none-any.whl", hash = "sha256:1377bda3466d70b55e3f5cecfa55bb7cfcf219c7964629b967c37cf0bda818b7"},
@@ -1847,6 +1906,10 @@ rasterio = [
 reorder-python-imports = [
     {file = "reorder_python_imports-3.8.3-py2.py3-none-any.whl", hash = "sha256:783f9575f76dd21ae5de974edf514cebc2b6904bbfe7cda515c24f1815fa22bf"},
     {file = "reorder_python_imports-3.8.3.tar.gz", hash = "sha256:cb622aa0ea505972b59cc01aa26c08fb17d39a8fc62ff488288908725927d968"},
+]
+requests = [
+    {file = "requests-2.28.1-py3-none-any.whl", hash = "sha256:8fefa2a1a1365bf5520aac41836fbee479da67864514bdb821f31ce07ce65349"},
+    {file = "requests-2.28.1.tar.gz", hash = "sha256:7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"},
 ]
 restructuredtext-lint = [
     {file = "restructuredtext_lint-1.4.0.tar.gz", hash = "sha256:1b235c0c922341ab6c530390892eb9e92f90b9b75046063e047cacfb0f050c45"},
@@ -2047,6 +2110,10 @@ tomli = [
 typing-extensions = [
     {file = "typing_extensions-4.3.0-py3-none-any.whl", hash = "sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02"},
     {file = "typing_extensions-4.3.0.tar.gz", hash = "sha256:e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"},
+]
+urllib3 = [
+    {file = "urllib3-1.26.13-py2.py3-none-any.whl", hash = "sha256:47cc05d99aaa09c9e72ed5809b60e7ba354e64b59c9c173ac3018642d8bb41fc"},
+    {file = "urllib3-1.26.13.tar.gz", hash = "sha256:c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"},
 ]
 virtualenv = [
     {file = "virtualenv-20.16.5-py3-none-any.whl", hash = "sha256:d07dfc5df5e4e0dbc92862350ad87a36ed505b978f6c39609dc489eadd5b0d27"},
