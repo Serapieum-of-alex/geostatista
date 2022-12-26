@@ -26,12 +26,12 @@ geostatista
 
 Main Features
 -------------
-  -
+  - spatial interpolation (IDW/ISDW)
 
 
 Future work
 -------------
-  -
+  - Kriging
 
 
 
@@ -59,7 +59,7 @@ pip install git+https://github.com/MAfarrag/geostatista
 ## pip
 to install the last release you can easly use pip
 ```
-pip install geostatista==0.1.2
+pip install geostatista==0.1.4
 ```
 
 Quick start
