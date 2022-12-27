@@ -59,7 +59,7 @@ pip install git+https://github.com/MAfarrag/geostatista
 ## pip
 to install the last release you can easly use pip
 ```
-pip install geostatista==0.1.4
+pip install geostatista==0.1.5
 ```
 
 Quick start
