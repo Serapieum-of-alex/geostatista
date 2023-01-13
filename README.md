@@ -5,7 +5,7 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/MAfarrag/geostatista.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MAfarrag/geostatista/alerts/)
 
 
-
+[![codecov](https://codecov.io/gh/Serapieum-of-alex/geostatista/branch/main/graph/badge.svg?token=AVZ1XGTdQ2)](https://codecov.io/gh/Serapieum-of-alex/geostatista)
 ![GitHub last commit](https://img.shields.io/github/last-commit/MAfarrag/geostatista)
 ![GitHub forks](https://img.shields.io/github/forks/MAfarrag/geostatista?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/MAfarrag/geostatista?style=social)
