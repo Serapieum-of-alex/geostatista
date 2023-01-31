@@ -11,7 +11,7 @@ requirements_dev = [line.strip() for line in open("requirements-dev.txt").readli
 
 setup(
     name="geostatista",
-    version="0.1.5",
+    version="0.1.6",
     description="statistics package",
     author="Mostafa Farrag",
     author_email="moah.farag@gmail.come",
