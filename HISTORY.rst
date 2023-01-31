@@ -16,3 +16,8 @@ History
 ------------------
 
 * fix bug in pypi package names in the requirements.txt file
+
+0.1.6 (2023-01-31)
+------------------
+
+* bump up versions
